@@ -5,9 +5,9 @@ import Dropzone from 'react-dropzone';
 import './App.css';
 
 interface IState {
-  imageFiles: any[],
   results: any,
-  dropzone: any
+  dropzone: any,
+  cityID: any
 }
 
 export default class App extends React.Component<{}, IState>{
@@ -15,7 +15,7 @@ export default class App extends React.Component<{}, IState>{
   constructor(props: any) {
     super(props)
     this.state = {
-      imageFiles: [],
+      cityID: "2172797",
       results: "",
       dropzone: this.onDrop.bind(this)
     }
@@ -23,7 +23,6 @@ export default class App extends React.Component<{}, IState>{
 
   public onDrop(files: any) {
     this.setState({
-      imageFiles: files,
       results: ""
     })
     const file = files[0]
@@ -37,7 +36,7 @@ export default class App extends React.Component<{}, IState>{
   }
 
   public upload(base64String: string) {
-    fetch('https://danktrigger.azurewebsites.net/api/dank', {
+    fetch('https://api.openweathermap.org/data/2.5/weather?id=2172797&appid=75dc83ae2f9fe5edc1e29769a660f641', {
       method: 'POST',
       headers: {
         'Content-Type': 'text/plain',
@@ -51,8 +50,9 @@ export default class App extends React.Component<{}, IState>{
         this.setState({results: response.statusText})
       }
       else {
-        response.json().then((data:any) => this.setState({results: data[0].class}))
+        response.json().then((data:any) => this.setState({results: JSON.stringify(data.weather[0].main)}))
       }
+  
       return response
     })
   }
