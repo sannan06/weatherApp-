@@ -1,6 +1,6 @@
-import CircularProgress from '@material-ui/core/CircularProgress';
+// import CircularProgress from '@material-ui/core/CircularProgress';
 import * as React from 'react';
-import Dropzone from 'react-dropzone';
+// import Dropzone from 'react-dropzone';
 // import Loader from 'react-loader-spinner'
 import './App.css';
 
@@ -62,23 +62,27 @@ export default class App extends React.Component<{}, IState>{
     return (
       <div className="container-fluid">
         <div className="centreText">
-          <div className="dropZone">
+{/*           <div className="dropZone">
             <Dropzone onDrop={this.state.dropzone} style={{position: "relative"}}>
               <div style={{height: '50vh'}}>
                 {
-                  this.state.imageFiles.length > 0 ? 
-                    <div>{this.state.imageFiles.map((file) => <img className="image" key={file.name} src={file.preview} /> )}</div> :
+                  this.state.cityID.length > 0 ? 
+                    <div>{this.state.cityID.map}</div> :
                     <p>Try dropping some files here, or click to select files to upload.</p>
                 }  
               </div>
             </Dropzone>
-          </div>
+          </div> */}
+          <form>
+            City Id
+            <input type = "text" name = "cityid"/>
+          </form>
           <div  className="dank">
-          {
-            this.state.results === "" && this.state.imageFiles.length > 0 ?
+{/*           {
+            this.state.results === "" && this.state.cityID.length > 0 ?
             <CircularProgress thickness={3} /> :
             <p>{this.state.results}</p>
-          }
+          } */}
           </div>
         </div>
       </div>
