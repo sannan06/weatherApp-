@@ -1,4 +1,4 @@
-// import CircularProgress from '@material-ui/core/CircularProgress';
+import * as MaterialD from '@material-ui/core';
 import * as React from 'react';
 // import Dropzone from 'react-dropzone';
 // import Loader from 'react-loader-spinner'
@@ -75,12 +75,11 @@ public updateCityID(event: any) {
           <form>
             City Id: 
             <input type = "text" name = "cityid" id="01" defaultValue={this.state.cityID} onChange = {this.updateCityID} />
-            <button type="button" onClick={this.onClick}>Get the weather</button>
+            <MaterialD.Button type="button" onClick={this.onClick}>Get the weather</MaterialD.Button>
           </form>  
           <div  className="dank">
-            <p>{this.state.results}
-            {this.state.cityID}
-            </p>
+            <p>{this.state.results}</p>
+            <p>{this.state.cityID}</p>
           </div>
         </div>
       </div>
