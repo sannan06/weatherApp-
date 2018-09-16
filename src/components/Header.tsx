@@ -14,9 +14,9 @@ export const Header: React.StatelessComponent<{}> = () => {
                         <MenuIcon aria-haspopup="true"/>
                     </IconButton>
                     <Typography variant="display2" color="inherit">
-                        <Link style={{color: "white"}} to="/">dankNotDank</Link>
-                        <Link to="/FirstComponent"> Page 1 </Link>
-                        <Link to="/SecondComponent"> Page 2 </Link>
+                        <Link style={{color: "white"}} to="/">Weather App</Link>
+{/*                         <Link to="/FirstComponent"> Page 1 </Link>
+                        <Link to="/SecondComponent"> Page 2 </Link> */}
                     </Typography>
                 </Toolbar>
             </AppBar>
